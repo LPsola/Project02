@@ -28,25 +28,33 @@ userRoutes.get("/home/post", (req, res, next) => {
   }
 });
 
-// userRoutes.post("/process-post", (req, res, next) => {
-//   console.log(req.body);
-//   const { title, description } = req.body;
-//   Post.create({ title, description })
-//     .then(() => {
-//       // redirect only to URLs if no redirectm form will resubmit upon refresh
-//       res.redirect("/user/home");
-//     })
-//     .catch(err => {
-//       next(err);
-//     });
-// });
+userRoutes.post("/process-post", (req, res, next) => {
+  const postedBy = req.user._id;
+  const { title, description } = req.body;
+  Post.create({ title, description, postedBy })
+    .then(post => {
+      // redirect only to URLs if no redirectm form will resubmit upon refresh
+      res.redirect("/user/home/post/" + post._id);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
-// userRoutes.get("/home/post/:postId", (req, res, next) => {
-//   res.render("user/single-post");
-//   if (!req.user) {
-//     res.redirect("/auth/login");
-//     return;
-//   }
-// });
+userRoutes.get("/home/post/:postId", (req, res, next) => {
+  Post.findById(req.params.postId)
+    .then(postDetails => {
+      res.locals.postId = req.params.postId;
+      res.locals.post = postDetails;
+      res.render("user/single-post");
+    })
+    .catch(err => {
+      next(err);
+    });
+  if (!req.user) {
+    res.redirect("/auth/login");
+    return;
+  }
+});
 
 module.exports = userRoutes;
