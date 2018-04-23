@@ -1,5 +1,5 @@
 const express = require("express");
-const passport = require('passport');
+const passport = require("passport");
 const authRoutes = express.Router();
 const User = require("../models/User");
 
@@ -7,17 +7,19 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-
 authRoutes.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
+  res.render("auth/login", { message: req.flash("error") });
 });
 
-authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/auth/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
+authRoutes.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/auth/login",
+    failureFlash: true,
+    passReqToCallback: true
+  })
+);
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
@@ -25,6 +27,7 @@ authRoutes.get("/signup", (req, res, next) => {
 
 authRoutes.post("/signup", (req, res, next) => {
   const username = req.body.username;
+  const email = req.body.email;
   const password = req.body.password;
   const rol = req.body.role;
   if (username === "" || password === "") {
@@ -43,12 +46,14 @@ authRoutes.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username,
+      email,
       password: hashPass,
-      role:"teacher"
+      role: "normal"
     });
 
-    newUser.save((err) => {
+    newUser.save(err => {
       if (err) {
+        console.log(err);
         res.render("auth/signup", { message: "Something went wrong" });
       } else {
         res.redirect("/");

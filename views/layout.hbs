@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
 
-    {{{body}}}
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
 
-    <script src='/javascripts/script.js'></script>
-  </body>
+<body>
+
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/contact">Contact Us</a>
+      <a href="/about">About Us</a>
+      {{#if foundUser}}
+      <strong>{{foundUser.username}}</strong>
+      <a href="/auth/logout">Log Out</a>
+      {{else}}
+      <a href="/auth/login">Log In</a>
+      <a href="/auth/signup">Sign up</a>
+      {{/if}}
+
+    </nav>
+  </header>
+
+  {{{body}}}
+
+  <script src='/javascripts/script.js'></script>
+</body>
+
 </html>
