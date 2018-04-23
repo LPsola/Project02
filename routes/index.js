@@ -50,4 +50,9 @@ router.get("/about", (req, res, next) => {
   res.render("about-us");
 });
 
+/* GET Recent Posts page */
+router.get("/now", (req, res, next) => {
+  res.render("recent-posts");
+});
+
 module.exports = router;
