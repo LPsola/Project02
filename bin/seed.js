@@ -5,7 +5,7 @@ const Post = require("../models/Post");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect("mongodb://localhost/project02", { useMongoClient: true })
+  .connect(process.env.MONGODB_URI, { useMongoClient: true })
   .then(() => {
     console.log("Connected to Mongo!");
   })

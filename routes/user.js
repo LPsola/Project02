@@ -49,11 +49,6 @@ userRoutes.post("/process-post", upload.single("picture"), (req, res, next) => {
       // redirect only to URLs if no redirect form will resubmit upon refresh
       res.redirect("/user/home/post/" + post._id);
     })
-    .then(post => {
-      Tweet.tweetPicture(title, secure_url);
-      // redirect only to URLs if no redirect form will resubmit upon refresh
-      res.redirect("/user/home/post/" + post._id);
-    })
     .catch(err => {
       next(err);
     });

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
+const Post = require("../models/Post");
 const transport = nodemailer.createTransport({
   service: "Gmail",
   auth: {
@@ -68,7 +69,15 @@ router.get("/about", (req, res, next) => {
 
 /* GET Recent Posts page */
 router.get("/now", (req, res, next) => {
-  res.render("recent-posts");
+  Post.find().sort({created_at: -1}).limit(10)
+  .then(postsFromDb => {
+    res.locals.postList = postsFromDb;
+    res.render("recent-posts");
+  })
+  .catch(err => {
+    next(err);
+  });
+
 });
 
 module.exports = router;

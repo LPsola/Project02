@@ -1,1 +1,12 @@
 <h1>Recent Posts</h1>
+
+<ul>
+    {{#each postList}}
+    <li>
+        <h3><a href="/user/home/post/{{this._id}}">{{this.title}}</a></h3>
+        <img src="{{this.pictureUrl}}">
+        <p>Description: {{this.description}}</p>
+        <p>Created: {{this.created_at}}</p>
+    </li>
+    {{/each}}
+</ul>
