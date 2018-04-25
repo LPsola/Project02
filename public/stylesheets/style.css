@@ -23,3 +23,8 @@ a {
   margin-right: 30vh;
   margin-left: 10vh;
 }
+
+.my-map {
+  height: 40vh;
+  width: 40vh;
+}
