@@ -12,7 +12,7 @@ const Post = require("../models/Post");
 
 /* GET User Home page */
 userRoutes.get("/home", (req, res, next) => {
-  Post.find()
+  Post.find({postedBy: req.user._id})
   .then(postsFromDb => {
     res.locals.postList = postsFromDb;
     res.render("user/user-home");
@@ -41,15 +41,15 @@ upload.single('picture'),
   const postedBy = req.user._id;
   const { title, description } = req.body;
   const { secure_url} = req.file;
-  // cloudinary.extractExif("../public/images/gpspic.jpg");
   Post.create({ 
     title, 
     description, 
     postedBy,
     pictureUrl: secure_url,
+    twitter_id: "",
    })
   .then(post => {
-    Tweet.tweetPicture(title,secure_url)
+    Tweet.tweetPicture(title,secure_url);
     // redirect only to URLs if no redirect form will resubmit upon refresh
     res.redirect("/user/home/post/" + post._id);
   })
@@ -74,4 +74,13 @@ userRoutes.get("/home/post/:postId", (req, res, next) => {
   }
 });
 
+userRoutes.get("/home/post/:postId/delete", (req,res,next) =>{
+  Post.findByIdAndRemove(req.params.postId)
+  .then(()=>{
+    res.redirect("/")
+  })
+  .catch((err)=>{
+    next(err)
+  }) 
+})
 module.exports = userRoutes;
