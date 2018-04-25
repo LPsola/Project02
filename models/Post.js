@@ -13,6 +13,7 @@ const postSchema = new Schema(
       ref: "User",
       required: true
     },
+    tweet_id: {type: Number},
     status: {
       type: String,
       enum: ["Unresolved", "Resolved"],
