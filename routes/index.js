@@ -20,21 +20,37 @@ router.get("/contact", (req, res, next) => {
 });
 
 router.post("/process-message", (req, res, next) => {
-  const { sender, senderEmail, message } = req.body;
+  const {
+    sender,
+    senderEmail,
+    senderTel,
+    memberYes,
+    memberNo,
+    subject,
+    message
+  } = req.body;
   transport
     .sendMail({
-      from: "Website <Klemar@example.com>",
+      from: "Website <website@example.com>",
       to: process.env.gmail_user,
       subject: `${sender} is trying to contact you`,
       text: `
     Name: ${sender}
     Email: ${senderEmail}
+    Telephone: ${senderTel}
+    Is Member: ${memberYes}
+    Is not Member: ${memberNo}
+    Subject: ${subject}
     Message: ${message}
     `,
       html: `
     <h1>Contact Form Message</h1>
     <p>Name: ${sender}</p>
     <p>Email: ${senderEmail}</p>
+    <p>Telephone: ${senderTel}</p>
+    <p>Is Member: ${memberYes}</p>
+    <p>Is not Member: ${memberNo}</p>
+    <p>Subject: ${subject}</p>
     <p>Message: ${message}</p>`
     })
     .then(() => {

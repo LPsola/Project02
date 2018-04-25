@@ -1,20 +1,121 @@
-<h2>Contact Us</h2>
+{{!--
+<div class="contact-head">
+    <h1>
 
-<form action="/process-message" method="POST">
-    <label>
-        Name:
-        <input type="text" name="sender" placeholder="Name">
-    </label>
-    <br>
-    <label>
-        Email:
-        <input type="text" name="senderEmail" placeholder="email@example.com">
-    </label>
-    <br>
-    <label>
-        Message:
-        <textarea name="message" cols="30" rows="10" placeholder="Your comment here"></textarea>
-    </label>
-    <br>
-    <button>Send Message</button>
+        Contact Us</h1>
+    <h2>If you've encountered issues with our website or simply have any improvement ideas or questions for us, feel free to
+        contact us :) </h2>
+
+
+</div> --}}
+
+<form class="form-styling" action="/process-message" method="POST">
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">From</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <p class="control is-expanded has-icons-left">
+                    <input class="input" type="text" name="sender" placeholder="Francois">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control is-expanded has-icons-left has-icons-right">
+                    <input class="input is-success" type="email" name="senderEmail" placeholder="francois@lefrancais.fr">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="field is-horizontal">
+        <div class="field-label"></div>
+        <div class="field-body">
+            <div class="field is-expanded">
+                <div class="field has-addons">
+                    <p class="control">
+                        <a class="button is-static">
+                            +33
+                        </a>
+                    </p>
+                    <p class="control is-expanded">
+                        <input class="input" type="tel" name="senderTel" placeholder="Your phone number">
+                    </p>
+                </div>
+                <p class="help">Do not enter the first zero</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="field is-horizontal">
+        <div class="field-label">
+            <label class="label">Already a member?</label>
+        </div>
+        <div class="field-body">
+            <div class="field is-narrow">
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" name="memberYes"> Yes
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="memberNo"> No
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Subject</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-danger" type="text" name="subject" placeholder="e.g. Partnership opportunity">
+                </div>
+                <p class="help is-danger">
+                    This field is required
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Question</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea" name="message" placeholder="Explain how we can help you"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="field is-horizontal">
+        <div class="field-label">
+            <!-- Left empty for spacing -->
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary">
+                        Send message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>

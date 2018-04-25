@@ -4,31 +4,80 @@
 <head>
   <title>{{title}}</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+  <link rel="stylesheet" href="/stylesheets/font-style.css">
 </head>
 
 <body>
-
   <header>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/contact">Contact Us</a>
-      <a href="/about">About Us</a>
-      <a href="/now">Recent Posts</a>
-      {{#if foundUser}}
-      <a href="/user/home">
-        <strong>{{foundUser.username}}</strong>
-      </a>
-      <a href="/auth/logout"> Log Out</a>
-
-      {{else}}
-      <a href="/auth/login">Log In</a>
-      <a href="/auth/signup">Sign up</a>
-      {{/if}}
-
-    </nav>
+    <!-- Hero head: will stick at the top -->
+    <div class="hero is-link is-medium">
+      <nav class="navbar is-link">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img class="logo-nav" src="../images/horizontal-white.png" alt="Logo">
+            </a>
+            <span id="navbarMenuHeroA" class="navbar-burger burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroB" class="navbar-menu">
+            <div class="navbar-end">
+              {{#if foundUser}}
+              <a href="/user/home" class="navbar-item">
+                <strong>{{foundUser.username}}</strong>
+              </a>
+              {{/if}}
+              <a id="home" href="/" class="navbar-item">Home</a>
+              <a id="contact" href="/contact" class="navbar-item">Contact Us</a>
+              <a href="/about" class="navbar-item">About Us</a>
+              <a href="/now" class="navbar-item">Recent Posts</a>
+              <hr class="dropdown-divider"> {{#if foundUser}}
+              <span class="navbar-item">
+                <a href="/auth/logout" class="button is-link is-inverted">
+                  <span class="icon">
+                    <i class="fas fa-sign-out-alt"></i>
+                  </span>
+                  <span>Log Out</span>
+                </a>
+              </span>
+              {{else}}
+              <span class="navbar-item">
+                <a href="/auth/login" class="button is-link is-inverted">
+                  <span class="icon">
+                    <i class="fas fa-sign-in-alt"></i>
+                  </span>
+                  <span>Log In</span>
+                </a>
+              </span>
+              <span class="navbar-item">
+                <a href="/auth/signup" class="button is-link is-inverted">
+                  <span class="icon">
+                    <i class="fas fa-user-plus"></i>
+                  </span>
+                  <span>Sign up</span>
+                </a>
+              </span>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  {{{body}}}
+  <div class="body">
+
+    {{{body}}}
+
+
+  </div>
+
 
   <script src='/javascripts/script.js'></script>
 </body>

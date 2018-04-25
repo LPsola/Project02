@@ -1,0 +1,9 @@
+h1 {
+  font: 3em "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: hsl(217, 71%, 53%);
+}
+
+h2 {
+  color: lightgrey;
+  font: 1.2em "Lucida Grande", Helvetica, Arial, sans-serif;
+}

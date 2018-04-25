@@ -4,8 +4,8 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 
 passport.use(
-  new LocalStrategy((username, password, next) => {
-    User.findOne({ username }, (err, foundUser) => {
+  new LocalStrategy({ usernameField: "email" }, (email, password, next) => {
+    User.findOne({ email }, (err, foundUser) => {
       if (err) {
         next(err);
         return;

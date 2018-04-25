@@ -1,26 +1,36 @@
-<h2>
-  Login</h2>
-
-<form action="/auth/login" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
-
-  <br>
-  <br>
-
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br> {{#if message }}
+<form class="form-styling" action="/auth/login" method="POST" id="form-container">
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="email" name="email" placeholder="Email">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control has-icons-left">
+      <input class="input" type="password" name="password" placeholder="Password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+  </div>
+  {{#if message }}
   <div class="error-message">{{ message }}</div>
   {{/if}}
-
-  <br>
-  <br>
-
-  <button>Login</button>
-
-  <p class="account-message">
-    Don't have an account yet?
-    <a href="/auth/login">Signup</a>
-  </p>
+  <div class="field">
+    <p class="control">
+      <button class="button is-success">
+        Login
+      </button>
+    </p>
+    <br>
+    <p class="account-message">
+      Don't have an account yet?
+      <a href="/auth/signup">Signup here!</a>
+    </p>
+  </div>
 </form>

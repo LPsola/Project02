@@ -1,8 +1,25 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
 a {
-  color: #00B7FF; }
+  color: #00b7ff;
+}
 
-/*# sourceMappingURL=style.css.map */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dropdown {
+  justify-content: space-around;
+  flex: right;
+}
+
+.logo-home {
+  width: 45vh;
+  padding-left: 4vh;
+}
+
+.form-styling {
+  margin-top: 10vh;
+  margin-right: 30vh;
+  margin-left: 10vh;
+}
