@@ -21,10 +21,12 @@ const post = [
       "https://i.pinimg.com/originals/3e/7f/66/3e7f6667ab0eee2e40015e18d6b105e3.jpg",
     coordinates: [2.39, 48.86],
     postedBy: "5addb9cfd7da8f36aec1294d",
+    tweet_id: "989468033449189376",
     status: "Unresolved",
     postPoints: 10
   }
 ];
+
 
 const user = [
   {
@@ -36,6 +38,8 @@ const user = [
     role: "admin"
   }
 ];
+
+
 
 User.create(user)
   .then(() => {
