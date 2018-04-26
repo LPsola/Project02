@@ -12,7 +12,7 @@ passport.use(
       }
 
       if (!foundUser) {
-        next(null, false, { message: "Incorrect username" });
+        next(null, false, { message: "Incorrect email" });
         return;
       }
 

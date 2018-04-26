@@ -69,15 +69,27 @@ router.get("/about", (req, res, next) => {
 
 /* GET Recent Posts page */
 router.get("/now", (req, res, next) => {
-  Post.find().sort({created_at: -1}).limit(10)
-  .then(postsFromDb => {
-    res.locals.postList = postsFromDb;
-    res.render("recent-posts");
-  })
-  .catch(err => {
-    next(err);
-  });
+  Post.find()
+    .sort({ created_at: -1 })
+    .limit(10)
+    .then(postsFromDb => {
+      res.locals.postList = postsFromDb;
+      res.render("recent-posts");
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
+// generate data for recent posts
+router.get("/recentposts/data", (req, res, next) => {
+  Post.find()
+    .then(postsFromDb => {
+      res.json(postsFromDb);
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
 module.exports = router;

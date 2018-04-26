@@ -13,7 +13,8 @@ userRoutes.get("/home", (req, res, next) => {
   Post.find({ postedBy: req.user._id })
     .then(postsFromDb => {
       res.locals.postList = postsFromDb;
-      res.render("user/user-home");
+      let userId = req.user._id;
+      res.render("user/user-home", { userId });
     })
     .catch(err => {
       next(err);
@@ -54,6 +55,17 @@ userRoutes.post("/process-post", upload.single("picture"), (req, res, next) => {
     });
 });
 
+// generate data for user home map
+userRoutes.get("/userposts/data", (req, res, next) => {
+  Post.find({ postedBy: req.user._id })
+    .then(postsFromDb => {
+      res.json(postsFromDb);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
 userRoutes.get("/home/post/:postId", (req, res, next) => {
   Post.findById(req.params.postId)
     .then(postDetails => {
@@ -68,6 +80,17 @@ userRoutes.get("/home/post/:postId", (req, res, next) => {
     res.redirect("/auth/login");
     return;
   }
+});
+
+// generate data for single post
+userRoutes.get("/userposts/data/:postId", (req, res, next) => {
+  Post.findById(req.params.postId)
+    .then(postDetails => {
+      res.json(postDetails);
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
 userRoutes.get("/home/post/:postId/delete", (req, res, next) => {

@@ -1,11 +1,16 @@
 <h2>User Home</h2>
 <a href="/user/home/post">Add a post</a>
+<div id="user-home" class="my-user-home-map"></div>
 <ul>
     {{#each postList}}
     <li>
-        <h3><a href="/user/home/post/{{this._id}}">{{this.title}}</a></h3>
+        <h3>
+            <a href="/user/home/post/{{this._id}}">{{this.title}}</a>
+        </h3>
         <img src="{{this.pictureUrl}}">
         <p>{{this.description}}</p>
     </li>
     {{/each}}
 </ul>
+
+<script src='/javascripts/script-user-home.js'></script>

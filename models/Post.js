@@ -6,14 +6,14 @@ const postSchema = new Schema(
     title: { type: String, required: true },
     description: { type: String },
     pictureUrl: { type: String },
-    coordinates: { type: Array }, //[longitude, latitude]
+    coordinates: [{ type: Number }], //[longitude, latitude]
     postedBy: {
       type: Schema.Types.ObjectId,
       //Referers to the document
       ref: "User",
       required: true
     },
-    tweet_id: {type: Number},
+    tweet_id: { type: Number },
     status: {
       type: String,
       enum: ["Unresolved", "Resolved"],
