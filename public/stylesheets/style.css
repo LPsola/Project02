@@ -24,7 +24,38 @@ a {
   margin-left: 10vh;
 }
 
-.my-map {
+.my-recent-posts-map {
+  margin: auto;
+  height: 70vh;
+  width: 80vw;
+}
+
+.my-user-home-map {
+  margin: auto;
+  height: 70vh;
+  width: 80vw;
+}
+
+.my-single-post-map {
   height: 40vh;
-  width: 40vh;
+  width: 40vw;
+}
+
+.lat-input {
+  display: none;
+}
+
+.lng-input {
+  display: none;
+}
+
+.my-userhome-map {
+  height: 50vh;
+  width: 100vh;
+}
+
+@media (min-width: 1088px) {
+  .hero-foot {
+    display: none;
+  }
 }

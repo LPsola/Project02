@@ -1,12 +1,16 @@
 <h1>Recent Posts</h1>
-
+<div id="home-post" class="my-recent-posts-map"></div>
 <ul>
     {{#each postList}}
     <li>
-        <h3><a href="/user/home/post/{{this._id}}">{{this.title}}</a></h3>
+        <h3>
+            <a href="/user/home/post/{{this._id}}">{{this.title}}</a>
+        </h3>
         <img src="{{this.pictureUrl}}">
         <p>Description: {{this.description}}</p>
         <p>Created: {{this.created_at}}</p>
     </li>
     {{/each}}
 </ul>
+
+<script src='/javascripts/script-recent-posts.js'></script>

@@ -2,5 +2,12 @@
 
 <img src="{{post.pictureUrl}}">
 <p>{{post.description}}</p>
+
+<p class="lat-input">{{post.coordinates.[0]}}</p>
+<p class="lng-input">{{post.coordinates.[1]}}</p>
+
 <a href="{{post._id}}/delete">Delete Post and Tweet</a>
-<div class="my-map"></div>
+<div class="my-single-post-map"></div>
+
+
+<script src='/javascripts/script-single-user-post.js'></script>
