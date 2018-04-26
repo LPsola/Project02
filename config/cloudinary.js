@@ -14,7 +14,7 @@ const storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: 'pictures-from-user-posts',
 //  Validate formats in form submission page
-//   allowedFormats: ['jpg', 'png'],
+  allowedFormats: ['jpg', 'png', 'jpeg'],
 //   filename: function (req, file, cb) {
 //     cb(null, 'pictures-from-user-posts');
 //   }
