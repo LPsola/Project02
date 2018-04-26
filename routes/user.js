@@ -2,6 +2,7 @@ const express = require("express");
 const userRoutes = express.Router();
 const Twitter = require("../config/twitter");
 const upload = require("../config/cloudinary");
+const Civic = require("../config/civic")
 
 const Axi = require("../config/civic")
 const User = require("../models/User");
@@ -27,7 +28,7 @@ userRoutes.get("/home", (req, res, next) => {
 /* GET Posts page */
 userRoutes.get("/home/post", (req, res, next) => {
   
-  res.render("user/user-post-form");
+  res.render("user/user-post-form")
   if (!req.user) {
     res.redirect("/auth/login");
     return;
@@ -40,16 +41,25 @@ userRoutes.post("/process-post", upload.single("picture"), (req, res, next) => {
   const { secure_url } = req.file;
   
   Twitter.megaPicture(title, secure_url)
-  .then(tweetResults => {
-    console.log(tweetResults)    
+  .then(tweetResults => {    
     Post.create({
       title,
       description,
       postedBy,
       pictureUrl: secure_url,
       coordinates: tweetResults[0],
-      tweet_id: tweetResults[1].toString()
+      tweet_id: tweetResults[1].toString(),
     })
+    return tweetResults[0]
+  })
+  .then((coord) =>{
+    return Civic.getStreetAddress(coord[0],coord[1])
+  })
+  .then((address) =>{
+    return Civic.getObjOfficials(address)
+  })
+  .then((data) =>{
+    console.log("final is", Civic.scrapeNameAndTwitter(data))
   })
   .then(post => {
     res.redirect("/user/home/"); 
