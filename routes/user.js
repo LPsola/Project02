@@ -133,11 +133,15 @@ userRoutes.get("/home/post/:postId/retweet", (req, res, next) => {
   }
 });
 
-userRoutes.get("/home/:postId/retweet/:politiciantwitter", (req, res, next) => {
-  const retweet = `@${req.params.politiciantwitter} + ${req.params.title}`;
+userRoutes.get("/home/:postId/retweet/:politiciantwitter", (req, res, next) => {  
   Post.findById(req.params.postId)
     .then(postDetails => {
+      const retweet = `@${req.params.politiciantwitter} ${postDetails.title}`;
+     
       return Twitter.megaPicture(retweet, postDetails.pictureUrl);
+    })
+    .then(() =>{
+      res.redirect("/user/home/");
     })
     .catch(err => {
       next(err);

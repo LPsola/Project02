@@ -3,7 +3,8 @@
     {{#each twitters}}
     <li>
             <div class="politicians"><b>{{this.0.officeName}}</b>
-            <a href="/user/home/{{../postId}}/retweet/{{this.1.twitterhandle}}">Tweet them now at {{this.1.twitterhandle}}</a>
+            <a href="/user/home/{{../postId}}/retweet/{{this.1.twitterhandle}}">Want to tweet this post: {{this.1.twitterhandle}}</a>
+
             </div>
     </li>
     {{/each}}

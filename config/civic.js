@@ -15,7 +15,6 @@ function getObjOfficials(address){
         `&address=${address}`
     )
     .then(officials => {
-        // console.log('data from officials', officials.data)
         return officials.data
     })
     .catch(err => {
@@ -46,7 +45,7 @@ function singlePolitician(array, n) {
   
     var politicianName = array.officials[officialIndices].name;
     var politicianChannels = array.officials[officialIndices].channels;
-    var twitterHandle = "";
+    var twitterHandle = "Official is not on Twitter";
   
     if (array.officials[officialIndices].channels) {
       let officialChannel = array.officials[officialIndices].channels;
@@ -55,7 +54,7 @@ function singlePolitician(array, n) {
           twitterHandle = array.officials[officialIndices].channels[j].id;
           break;
         } else {
-          twitterHandle = "No Twitter Handle";
+          twitterHandle = "Official is not on Twitter";
         }
       }
     }
