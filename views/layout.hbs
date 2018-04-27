@@ -3,6 +3,9 @@
 
 <head>
   <title>{{title}}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
     crossorigin="anonymous">
@@ -18,7 +21,7 @@
         <div class="container">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
-              <img class="logo-nav" src="../images/horizontal-white.png" alt="Logo">
+              <img class="logo-nav" src="/images/horizontal-white.png" alt="Logo">
             </a>
             <span id="navbarMenuHeroA" class="navbar-burger burger">
               <span></span>
@@ -32,13 +35,14 @@
               <a href="/user/home" class="navbar-item">
                 <strong>{{foundUser.username}}</strong>
               </a>
-              {{/if}}
-              <a id="home" href="/" class="navbar-item">Home</a>
-              <a id="contact" href="/contact" class="navbar-item">Contact Us</a>
-              <a href="/about" class="navbar-item">About Us</a>
-              <a href="/now" class="navbar-item">Recent Posts</a>
-              <hr class="dropdown-divider"> {{#if foundUser}}
               <a href="/user/home/post" class="navbar-item">Add a Post</a>
+              {{else}}
+              <a id="home" href="/" class="navbar-item">Home</a>
+              {{/if}}
+              <a href="/now" class="navbar-item">Recent Posts</a>
+              <a href="/about" class="navbar-item">About Us</a>
+              <a id="contact" href="/contact" class="navbar-item">Contact Us</a>
+              <hr class="dropdown-divider"> {{#if foundUser}}
               <span class="navbar-item">
                 <a href="/auth/logout" class="button is-link is-inverted">
                   <span class="icon">
@@ -82,6 +86,20 @@
   </div>
 
   <script src='/javascripts/script.js'></script>
+
 </body>
+
+<footer class="foot">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p class="p-foot">
+        <strong>Seety</strong> by
+        <a href="https://www.linkedin.com/in/rley1/">Rodrigo Ley</a> and
+        <a href="https://www.linkedin.com/in/leo-punsola/">Leo Punsola</a> as their second project of
+        <a href="https://www.ironhack.com/en">Ironhack</a>
+      </p>
+    </div>
+  </div>
+</footer>
 
 </html>

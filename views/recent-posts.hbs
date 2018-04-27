@@ -1,14 +1,17 @@
-<h1>Recent Posts</h1>
 <div id="home-post" class="my-recent-posts-map"></div>
-<ul>
+<ul class="recent-posts">
     {{#each postList}}
-    <li>
-        <h3>
-            <a href="/user/home/post/{{this._id}}">{{this.title}}</a>
-        </h3>
-        <img src="{{this.pictureUrl}}">
-        <p>Description: {{this.description}}</p>
-        <p>Created: {{this.created_at}}</p>
+    <li class="recent-post">
+        <h4>
+            <a class="recent-post-title" href="/user/home/post/{{this._id}}">{{this.title}}</a>
+        </h4>
+        <div class="image-map-recent">
+            <img src="{{this.pictureUrl}}">
+            <div class="each-post-map" data-lat="{{this.coordinates.[0]}}" data-lng="{{this.coordinates.[1]}}"></div>
+        </div>
+
+        <p class="lat-input-each">{{this.coordinates.[0]}}</p>
+        <p class="lng-input-each">{{this.coordinates.[1]}}</p>
     </li>
     {{/each}}
 </ul>

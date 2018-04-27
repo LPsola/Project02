@@ -1,9 +1,42 @@
 h1 {
-  font: 3em "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding-top: 10vh;
+  padding-bottom: 2vh;
+  font: 8vh "Lucida Grande", Helvetica, Arial, sans-serif;
   color: hsl(217, 71%, 53%);
 }
 
 h2 {
+  padding-bottom: 5vh;
+  text-align: center;
   color: lightgrey;
-  font: 1.2em "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 3vh "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  margin-left: 5vw;
+  padding-bottom: 5vh;
+  padding-top: 5vh;
+  text-align: left;
+  color: hsl(217, 71%, 53%);
+  font: 4vh "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h4 {
+  color: lightgrey;
+  font: 2vh "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h5 {
+  margin-left: 5vw;
+  color: lightgrey;
+  font: 2vh "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h6 {
+  margin-left: 5vw;
+  padding-top: 5vh;
+  text-align: left;
+  color: hsl(217, 71%, 53%);
+  font: 4vh "Lucida Grande", Helvetica, Arial, sans-serif;
 }

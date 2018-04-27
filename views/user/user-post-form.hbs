@@ -1,13 +1,39 @@
-<h1>Add a post</h1>
-
 <form action="/user/process-post" method="POST" enctype="multipart/form-data">
-    <input type="text" name="title" placeholder="Title..">
-    <br>
-    <input type="text" name="description" placeholder="Description..">
-    <br>
-    <input type="file" name="picture">
-    <br>
-    <button>Publish This Post</button>
+
+    <div class="field post-form-title">
+        <div class="control">
+            <input class="input is-info" type="text" name="title" placeholder="Post title...">
+        </div>
+    </div>
+    <div class="field is-horizontal post-form-descr">
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea" name="Description" placeholder="Description..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="field post-form-file">
+        <div class="file is-info has-name">
+            <label class="file-label">
+                <input class="file-input" type="file" name="picture" id="file">
+                <span class="file-cta">
+                    <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Upload your image..
+                    </span>
+                </span>
+                <span class="file-name" id="filename">
+                    camera-picture.jpg
+                </span>
+            </label>
+        </div>
+    </div>
+    <button class="button is-success is-rounded post-form-btn">Publish This Post</button>
 
 </form>
 

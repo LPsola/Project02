@@ -1,15 +1,21 @@
-<h2>User Home</h2>
-<a href="/user/home/post">Add a post</a>
+<h1>your involvement, on a page.</h1>
+<h2>
+    Notice something around you worth improving?
+    <a href="/user/home/post">Add a post</a> and make it count!
+</h2>
 <div id="user-home" class="my-user-home-map"></div>
-<ul>
+<ul class="user-home-ul">
     {{#each postList}}
     <li>
-        <h3>
-            <a href="/user/home/post/{{this._id}}">{{this.title}}</a>
-        </h3>
-        <img src="{{this.pictureUrl}}">
-        <p>{{this.description}}</p>
+        <h6>
+            <a class="user-home-title" href="/user/home/post/{{this._id}}">{{this.title}}
+                <h5>(click on this link to view post detail)</h5>
+            </a>
+        </h6>
+        <img class="user-home-img" src="{{this.pictureUrl}}">
+        <div class="user-each-post-map" data-lat="{{this.coordinates.[0]}}" data-lng="{{this.coordinates.[1]}}"></div>
     </li>
+
     {{/each}}
 </ul>
 

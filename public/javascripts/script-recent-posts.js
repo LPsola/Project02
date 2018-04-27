@@ -15,8 +15,6 @@ axios
     const postList = response.data;
     postList.forEach(onePost => {
       const [latitude, longitude] = onePost.coordinates;
-      console.log("onePost", onePost);
-      console.log("x,y", latitude, longitude);
       if (latitude === undefined || longitude === undefined) {
         return;
       } else {
@@ -35,3 +33,24 @@ axios
   .catch(err => {
     alert("Something went wrong! 💩");
   });
+
+const eachMap = document.querySelectorAll(".each-post-map");
+
+eachMap.forEach(oneMap => {
+  console.log(oneMap.dataset);
+  const map5 = new google.maps.Map(oneMap, {
+    zoom: 14,
+    center: {
+      lat: Number(oneMap.dataset.lat),
+      lng: Number(oneMap.dataset.lng)
+    }
+  });
+  new google.maps.Marker({
+    position: {
+      lat: Number(oneMap.dataset.lat),
+      lng: Number(oneMap.dataset.lng)
+    },
+    map: map5,
+    animation: google.maps.Animation.DROP
+  });
+});

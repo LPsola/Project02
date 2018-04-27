@@ -18,30 +18,5 @@ new google.maps.Marker({
     lng: lngInput
   },
   map: map,
-  title: "Musee du Parfum",
   animation: google.maps.Animation.DROP
 });
-
-// axios
-//   .get("/userposts/data/:postId")
-//   .then(response => {
-//     const userPost = response.data;
-//     console.log(req.user);
-
-// userPostList.forEach(oneUserPost => {
-//   const [latitude, longitude] = oneUserPost.coordinates;
-//   console.log(latitude, longitude);
-//   new google.maps.Marker({
-//     position: {
-//       lat: latitude,
-//       lng: longitude
-//     },
-//     map: map1,
-//     title: oneUserPost.name,
-//     animation: google.maps.Animation.DROP
-//   });
-// });
-// })
-// .catch(err => {
-//   alert("Something went wrong! 💩");
-// });

@@ -2,6 +2,8 @@ a {
   color: #00b7ff;
 }
 
+/* Navbar and home page Styling */
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -13,22 +15,100 @@ a {
   flex: right;
 }
 
+.logo-nav {
+  height: 5vh;
+}
+
 .logo-home {
-  width: 45vh;
+  height: 45vh;
   padding-left: 4vh;
 }
 
-.form-styling {
+/* Form styling */
+
+.form-styling-contact {
   margin-top: 10vh;
-  margin-right: 30vh;
-  margin-left: 10vh;
+  margin-right: 20vw;
+  margin-left: 10vw;
+  margin-bottom: 10vh;
 }
+
+.form-styling-login {
+  margin-top: 10vh;
+  margin-right: 20vw;
+  margin-left: 20vw;
+  margin-bottom: 10vh;
+}
+.form-styling-signup {
+  margin-top: 10vh;
+  margin-right: 20vw;
+  margin-left: 20vw;
+  margin-bottom: 10vh;
+}
+
+/* Recent posts */
 
 .my-recent-posts-map {
   margin: auto;
+  margin-top: 10vh;
   height: 70vh;
   width: 80vw;
 }
+
+.recent-posts {
+  width: contain;
+  text-align: center;
+  margin: 10vh 8vw;
+}
+.recent-post {
+  width: 40vw;
+  float: left;
+  margin: 1vw;
+}
+
+.recent-post img {
+  width: 35vw;
+  height: 47vh;
+}
+
+.recent-post-title {
+  font-size: 1.5em;
+}
+
+.image-map-recent {
+  margin-left: 2vw;
+  width: 35vw;
+  margin-top: 3vh;
+  padding-bottom: 7vh;
+  border-bottom: 1px solid lightgrey;
+  position: relative;
+}
+.image-map-recent img:hover {
+  opacity: 0.4;
+}
+
+.image-map-recent img:hover + .each-post-map {
+  display: block;
+}
+
+.each-post-map {
+  position: absolute;
+  top: 5vh;
+  left: 2.5vw;
+  display: none;
+  height: 36vh;
+  width: 30vw;
+}
+
+.lat-input-each {
+  display: none;
+}
+
+.lng-input-each {
+  display: none;
+}
+
+/* User Home Map */
 
 .my-user-home-map {
   margin: auto;
@@ -36,9 +116,46 @@ a {
   width: 80vw;
 }
 
-.my-single-post-map {
+.user-home-img {
+  float: left;
   height: 40vh;
   width: 40vw;
+  margin-left: 10vw;
+}
+
+.user-each-post-map {
+  height: 40vh;
+  width: 38vw;
+  float: left;
+  margin-left: 2vw;
+}
+
+.user-home-title {
+  margin-left: 5vw;
+}
+.user-home-ul li {
+  height: 60vh;
+  width: 100vw;
+  border-bottom: 1px solid lightgrey;
+}
+/* Single post map */
+
+.my-single-post-map {
+  height: 50vh;
+  width: 40vw;
+  float: left;
+  margin-left: 2vw;
+}
+.single-post-img {
+  float: left;
+  height: 50vh;
+  width: 40vw;
+  margin-left: 5vw;
+}
+.single-post-bottom {
+  clear: both;
+  margin-left: 5vw;
+  line-height: 6vw;
 }
 
 .lat-input {
@@ -49,11 +166,56 @@ a {
   display: none;
 }
 
-.my-userhome-map {
-  height: 50vh;
-  width: 100vh;
+.delete-post-container {
+  position: relative;
 }
 
+.delete-post {
+  margin-bottom: 10vh;
+}
+
+.delete-post:hover + .notification {
+  display: inline;
+  position: absolute;
+  left: 10vw;
+  padding: 0 2vw;
+}
+.notification {
+  display: none;
+}
+
+/* single post form */
+
+.post-form-title {
+  width: 50vw;
+  margin: auto;
+  padding-top: 10vh;
+}
+
+.post-form-descr {
+  width: 50vw;
+  margin: auto;
+  padding-top: 3vh;
+}
+
+.post-form-file {
+  width: 50vw;
+  margin: auto;
+  padding-top: 3vh;
+}
+
+.post-form-btn {
+  margin-left: 25vw;
+  margin-top: 3vh;
+  margin-bottom: 10vh;
+}
+
+/* footer*/
+.foot {
+  padding: 5vh;
+  background-color: #eef7ff;
+  clear: both;
+}
 @media (min-width: 1088px) {
   .hero-foot {
     display: none;

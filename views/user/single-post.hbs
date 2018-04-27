@@ -1,13 +1,30 @@
-<h1>{{post.title}}</h1>
+<h3>{{post.title}}
+</h3>
 
-<img src="{{post.pictureUrl}}">
-<p>{{post.description}}</p>
+
+<img class="single-post-img" src="{{post.pictureUrl}}">
+<div class="my-single-post-map"></div>
+
+<div class="single-post-bottom">
+  <p class="single-post-descr">{{post.description}}</p>
+  <div class="delete-post-container">
+    <a class="delete-post" href="{{post._id}}/delete">
+      <button class="button is-danger">
+        Delete Post
+      </button>
+    </a>
+    <div class="notification">
+      If you delete this post, the tweet that was sent with it will also be deleted.
+    </div>
+
+  </div>
+</div>
 
 <p class="lat-input">{{post.coordinates.[0]}}</p>
 <p class="lng-input">{{post.coordinates.[1]}}</p>
 
-<a href="{{post._id}}/delete">Delete Post and Tweet</a>
-<div class="my-single-post-map"></div>
 
 
 <script src='/javascripts/script-single-user-post.js'></script>
+
+

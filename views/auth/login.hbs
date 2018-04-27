@@ -1,4 +1,4 @@
-<form class="form-styling" action="/auth/login" method="POST" id="form-container">
+<form class="form-styling-login" action="/auth/login" method="POST" id="form-container">
   <div class="field">
     <p class="control has-icons-left has-icons-right">
       <input class="input" type="email" name="email" placeholder="Email">
@@ -26,15 +26,6 @@
       <button class="button is-success">
         Login
       </button>
-      {{#if foundUser}}
-      <div class="notification">
-        <button class="delete"></button>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.
-        <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
-        Nullam gravida purus diam, et dictum
-        <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit
-      </div>
-      {{/if}}
     </p>
     <br>
     <p class="account-message">
@@ -42,4 +33,5 @@
       <a href="/auth/signup">Signup here!</a>
     </p>
   </div>
+
 </form>

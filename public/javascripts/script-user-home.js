@@ -40,3 +40,24 @@ axios
   .catch(err => {
     alert("Something went wrong! 💩");
   });
+
+const eachUserPostMap = document.querySelectorAll(".user-each-post-map");
+
+eachUserPostMap.forEach(oneMap => {
+  console.log(oneMap.dataset);
+  const map6 = new google.maps.Map(oneMap, {
+    zoom: 14,
+    center: {
+      lat: Number(oneMap.dataset.lat),
+      lng: Number(oneMap.dataset.lng)
+    }
+  });
+  new google.maps.Marker({
+    position: {
+      lat: Number(oneMap.dataset.lat),
+      lng: Number(oneMap.dataset.lng)
+    },
+    map: map6,
+    animation: google.maps.Animation.DROP
+  });
+});
