@@ -19,7 +19,7 @@ function dmsToDecimalCoordinates(NSEW, dmsArray){
         return decimalCoordinates.toFixed(6)
         case 'S':
         case 'W':
-        return decimalCoordinates.toFixed(6)
+        return -decimalCoordinates.toFixed(6)
     }
 }
 function extractExif(imagelocation){
@@ -80,7 +80,6 @@ function tweetPicture(tweet, imageData) {
                 return client.post('statuses/update', status);
             })
             .then((tweet) => {
-                console.log("tweet id", tweet.id_str)
                  return tweet.id_str
             })
             .catch((err) => {

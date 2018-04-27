@@ -2,6 +2,7 @@ const express = require("express");
 const userRoutes = express.Router();
 const Twitter = require("../config/twitter");
 const upload = require("../config/cloudinary");
+const Civic = require("../config/civic");
 
 const Axi = require("../config/civic");
 const User = require("../models/User");
@@ -40,7 +41,6 @@ userRoutes.post("/process-post", upload.single("picture"), (req, res, next) => {
 
   Twitter.megaPicture(title, secure_url)
     .then(tweetResults => {
-      console.log(tweetResults);
       Post.create({
         title,
         description,
@@ -49,9 +49,10 @@ userRoutes.post("/process-post", upload.single("picture"), (req, res, next) => {
         coordinates: tweetResults[0],
         tweet_id: tweetResults[1].toString()
       });
+      return tweetResults[0];
     })
     .then(post => {
-      res.redirect("/user/home");
+      res.redirect("/user/home/");
       // redirect only to URLs if no redirect form will resubmit upon refresh
     })
 
@@ -94,6 +95,49 @@ userRoutes.get("/home/post/:postId/delete", (req, res, next) => {
     })
     .then(() => {
       res.redirect("/user/home");
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
+userRoutes.get("/home/post/:postId/retweet", (req, res, next) => {
+  Post.findById(req.params.postId)
+    .then(postDetails => {
+      res.locals.postId = req.params.postId;
+      res.locals.post = postDetails;
+    })
+    .then(coord => {
+      return Civic.getStreetAddress(
+        res.locals.post.coordinates[0],
+        res.locals.post.coordinates[1]
+      );
+    })
+    .then(address => {
+      return Civic.getObjOfficials(address);
+    })
+    .then(data => {
+      return Civic.scrapeNameAndTwitter(data);
+    })
+    .then(officials => {
+      res.locals.twitters = officials;
+      res.locals.postId = res.locals.post._id;
+      res.render("user/retweet.hbs");
+    })
+    .catch(err => {
+      next(err);
+    });
+  if (!req.user) {
+    res.redirect("/auth/login");
+    return;
+  }
+});
+
+userRoutes.get("/home/:postId/retweet/:politiciantwitter", (req, res, next) => {
+  const retweet = `@${req.params.politiciantwitter} + ${req.params.title}`;
+  Post.findById(req.params.postId)
+    .then(postDetails => {
+      return Twitter.megaPicture(retweet, postDetails.pictureUrl);
     })
     .catch(err => {
       next(err);

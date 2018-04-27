@@ -40,3 +40,9 @@ h6 {
   color: hsl(217, 71%, 53%);
   font: 4vh "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+.politicians{
+  color: black;
+  font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom: 10px;
+}

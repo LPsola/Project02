@@ -7,6 +7,7 @@ const postSchema = new Schema(
     description: { type: String },
     pictureUrl: { type: String },
     coordinates: [{ type: Number }], //[longitude, latitude]
+    address: { type: String },
     postedBy: {
       type: Schema.Types.ObjectId,
       //Referers to the document
