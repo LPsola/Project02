@@ -1,0 +1,10 @@
+<h2>Make Your Voice Be Heard</h2>
+<ul>
+    {{#each twitters}}
+    <li>
+            <div class="politicians"><b>{{this.0.officeName}}</b>
+            <a href="/user/home/{{../postId}}/retweet/{{this.1.twitterhandle}}">Tweet them now at {{this.1.twitterhandle}}</a>
+            </div>
+    </li>
+    {{/each}}
+</ul>

@@ -52,15 +52,6 @@ userRoutes.post("/process-post", upload.single("picture"), (req, res, next) => {
     })
     return tweetResults[0]
   })
-  .then((coord) =>{
-    return Civic.getStreetAddress(coord[0],coord[1])
-  })
-  .then((address) =>{
-    return Civic.getObjOfficials(address)
-  })
-  .then((data) =>{
-    console.log("final is", Civic.scrapeNameAndTwitter(data))
-  })
   .then(post => {
     res.redirect("/user/home/"); 
     // redirect only to URLs if no redirect form will resubmit upon refresh
@@ -121,4 +112,45 @@ userRoutes.get("/home/post/:postId/delete", (req, res, next) => {
     next(err);
   });
 });
+
+
+userRoutes.get("/home/post/:postId/retweet", (req, res, next) => {
+  Post.findById(req.params.postId)
+  .then(postDetails => {
+    res.locals.postId = req.params.postId;
+    res.locals.post = postDetails;
+  })
+  .then((coord) =>{
+    return Civic.getStreetAddress(res.locals.post.coordinates[0],res.locals.post.coordinates[1])
+  })
+  .then((address) =>{
+    return Civic.getObjOfficials(address)
+  })
+  .then((data) =>{
+    return Civic.scrapeNameAndTwitter(data)
+  })
+  .then((officials) => {
+    res.locals.twitters = officials;
+    res.locals.postId = res.locals.post._id;
+    res.render("user/retweet.hbs");
+  })
+  .catch(err => {
+    next(err);
+  });
+  if (!req.user) {
+    res.redirect("/auth/login");
+    return;
+  }
+})
+
+userRoutes.get("/home/:postId/retweet/:politiciantwitter", (req, res, next) => {
+  const retweet = `@${req.params.politiciantwitter} + ${req.params.title}`
+  Post.findById(req.params.postId)
+  .then(postDetails => {
+    return Twitter.megaPicture(retweet, postDetails.pictureUrl)
+  })
+  .catch(err => {
+    next(err);
+  });
+})
 module.exports = userRoutes;

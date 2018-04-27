@@ -16,7 +16,7 @@ function getObjOfficials(address){
     )
     .then(officials => {
         // console.log('data from officials', officials.data)
-        return [officials.data.offices, officials.data.officials]
+        return officials.data
     })
     .catch(err => {
         next(err)
@@ -38,30 +38,44 @@ function getStreetAddress(lat,long){
     return promise
 }
 
-function scrapeNameAndTwitter(arr){
-    var officialsArr = []
 
-    function twitterChecker(channelsArr){
-        for(let j = 0; j < channelsArr.length; j++){
-            if(channelsArr[j].type === "Twitter"){
-                return channelsArr[j].id
-            }
-        }
-        return false
-    }
 
-    for(let i = 0; i < arr[0].length; i++){
-        if(twitterChecker(arr[1][i].channels)){
-            var twitter = twitterChecker(arr[1][i].channels)
-        } else{
-            var twitter= "No twitter"
+function singlePolitician(array, n) {
+    var officeName = array.offices[n].name;
+    var officialIndices = array.offices[n].officialIndices[0];
+  
+    var politicianName = array.officials[officialIndices].name;
+    var politicianChannels = array.officials[officialIndices].channels;
+    var twitterHandle = "";
+  
+    if (array.officials[officialIndices].channels) {
+      let officialChannel = array.officials[officialIndices].channels;
+      for (let j = 0; j < officialChannel.length; j++) {
+        if (array.officials[officialIndices].channels[j].type === "Twitter") {
+          twitterHandle = array.officials[officialIndices].channels[j].id;
+          break;
+        } else {
+          twitterHandle = "No Twitter Handle";
         }
-        let official = [arr[1][i].name + ", " + arr[0][i].name, twitter]
-        console.log(official)
-        officialsArr.push(official)
+      }
     }
-    console.log(officialsArr)
-}
+  
+    return [
+      { officeName: `${politicianName}, ${officeName}` },
+      { twitterhandle: twitterHandle }
+    ];
+  }
+  
+  function scrapeNameAndTwitter(civicResults) {
+    var results = [];
+    for (let i = 0; i < civicResults.offices.length; i++) {
+      results.push(singlePolitician(civicResults, i));
+    }
+    // console.log("res ", results);
+    return results;
+  }
+
+
 // https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
 module.exports = {getStreetAddress, getObjOfficials, scrapeNameAndTwitter}
 // https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
