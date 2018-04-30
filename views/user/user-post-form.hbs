@@ -1,5 +1,4 @@
 <form action="/user/process-post" method="POST" enctype="multipart/form-data">
-
     <div class="field post-form-title">
         <div class="control">
             <input class="input is-info" type="text" name="title" placeholder="Post title...">
@@ -30,8 +29,12 @@
                 <span class="file-name" id="filename">
                     camera-picture.jpg
                 </span>
+                
             </label>
+            
         </div>
+        <div><b>The picture must be JPEG format and GPS-tagged.</b></div>
+        <div><b>(Enable your phone location when taking the photo)</b></div>
     </div>
     <button class="button is-success is-rounded post-form-btn">Publish This Post</button>
 

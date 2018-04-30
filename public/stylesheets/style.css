@@ -166,7 +166,8 @@ a {
   display: none;
 }
 
-.delete-post-container {
+.delete-post-container,
+.tweet-post-container {
   position: relative;
 }
 
@@ -174,7 +175,8 @@ a {
   margin-bottom: 10vh;
 }
 
-.delete-post:hover + .notification {
+.delete-post:hover + .notification,
+.tweet-post:hover + .notification{
   display: inline;
   position: absolute;
   left: 10vw;
@@ -210,6 +212,10 @@ a {
   margin-bottom: 10vh;
 }
 
+/*Retweet Page*/
+.retweet-list{
+  text-align: center;
+}
 /* footer*/
 .foot {
   padding: 5vh;

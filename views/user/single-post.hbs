@@ -18,9 +18,19 @@
     </div>
 
   </div>
-  <p>
-    <a href="{{post._id}}/retweet">Tweet Your Officials</a>
-  </p>
+
+  <div class="tweet-post-container">
+    <a class="tweet-post" href="{{post._id}}/retweet">
+      <button class="button is-info">
+        Tweet Your Officials
+      </button>
+    </a>
+    <div class="notification">
+     Available for USA-based posts only.
+    </div>
+  </div>
+
+
 </div>
 
 <p class="lat-input">{{post.coordinates.[0]}}</p>

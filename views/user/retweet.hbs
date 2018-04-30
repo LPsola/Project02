@@ -1,11 +1,22 @@
 <h2>Make Your Voice Be Heard</h2>
-<ul>
+
+{{#if usa}}
+<ul class="retweet-list">
     {{#each twitters}}
     <li>
             <div class="politicians"><b>{{this.0.officeName}}</b>
-            <a href="/user/home/{{../postId}}/retweet/{{this.1.twitterhandle}}">Want to tweet this post: {{this.1.twitterhandle}}</a>
+        {{#if this.1.twitterhandle}}
+            <div><a href="/user/home/{{../postId}}/retweet/{{this.1.twitterhandle}}">Click to resend this tweet and mention {{this.1.twitterhandle}}.</a></div>
+        {{else}}
+            <div>This person is not on Twitter</div>
+        {{/if}}
 
             </div>
     </li>
     {{/each}}
 </ul>
+{{else}}
+<ul class="retweet-list">
+    <li><b>This feature is currently unavailable for non-USA based posts.</b></li>
+</ul>
+{{/if}}
