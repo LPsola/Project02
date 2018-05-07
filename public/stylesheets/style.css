@@ -169,19 +169,20 @@
     display: none;
   }
 
-  .delete-post-container {
+  .delete-post-container,
+  .tweet-post-container {
     position: relative;
-    margin-bottom: 5vh;
   }
 
   .delete-post {
     margin-bottom: 10vh;
   }
 
-  .delete-post:hover + .notification {
+  .delete-post:hover + .notification,
+  .tweet-post:hover + .notification {
     display: inline;
     position: absolute;
-    left: 28vw;
+    left: 10vw;
     padding: 0 2vw;
   }
   .notification {
@@ -1018,6 +1019,16 @@
 
     /* "transparent" only works here because == rgba(0,0,0,0) */
     background-image: linear-gradient(to bottom, transparent, white);
+  }
+  /*Retweet Page*/
+  .retweet-list {
+    text-align: center;
+  }
+  /* footer*/
+  .foot {
+    padding: 5vh;
+    background-color: #eef7ff;
+    clear: both;
   }
 }
 

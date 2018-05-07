@@ -117,14 +117,22 @@ userRoutes.get("/home/post/:postId/retweet", (req, res, next) => {
       return Civic.getObjOfficials(address);
     })
     .then(data => {
+      if(data){
       return Civic.scrapeNameAndTwitter(data);
+      }
+      else{
+      res.locals.usa = false;
+      res.render("user/retweet.hbs");
+      }
     })
     .then(officials => {
       res.locals.twitters = officials;
       res.locals.postId = res.locals.post._id;
+      res.locals.usa = true;
       res.render("user/retweet.hbs");
     })
     .catch(err => {
+
       next(err);
     });
   if (!req.user) {
@@ -133,11 +141,14 @@ userRoutes.get("/home/post/:postId/retweet", (req, res, next) => {
   }
 });
 
-userRoutes.get("/home/:postId/retweet/:politiciantwitter", (req, res, next) => {
-  const retweet = `@${req.params.politiciantwitter} + ${req.params.title}`;
+userRoutes.get("/home/:postId/retweet/:politiciantwitter", (req, res, next) => {  
   Post.findById(req.params.postId)
     .then(postDetails => {
+      const retweet = `@${req.params.politiciantwitter} ${postDetails.title}`;
       return Twitter.megaPicture(retweet, postDetails.pictureUrl);
+    })
+    .then(() =>{
+      res.redirect("/user/home/");
     })
     .catch(err => {
       next(err);
