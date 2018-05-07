@@ -1,223 +1,1181 @@
-a {
-  color: #00b7ff;
-}
+@media only screen and (max-width: 600px) {
+  a {
+    color: #00b7ff;
+  }
 
-/* Navbar and home page Styling */
+  /* Navbar and home page Styling */
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-.dropdown {
-  justify-content: space-around;
-  flex: right;
-}
+  .dropdown {
+    justify-content: space-around;
+    flex: right;
+  }
 
-.logo-nav {
-  height: 5vh;
-}
+  .logo-nav {
+    height: 5vh;
+  }
 
-.logo-home {
-  height: 45vh;
-  padding-left: 4vh;
-}
+  .logo-home {
+    height: 45vh;
+    padding-left: 4vh;
+  }
 
-/* Form styling */
+  /* Form styling */
 
-.form-styling-contact {
-  margin-top: 10vh;
-  margin-right: 20vw;
-  margin-left: 10vw;
-  margin-bottom: 10vh;
-}
+  .form-styling-contact {
+    margin-top: 10vh;
+    margin-right: 20vw;
+    margin-left: 10vw;
+    margin-bottom: 10vh;
+  }
 
-.form-styling-login {
-  margin-top: 10vh;
-  margin-right: 20vw;
-  margin-left: 20vw;
-  margin-bottom: 10vh;
-}
-.form-styling-signup {
-  margin-top: 10vh;
-  margin-right: 20vw;
-  margin-left: 20vw;
-  margin-bottom: 10vh;
-}
+  .form-styling-login {
+    margin-top: 10vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    margin-bottom: 10vh;
+  }
+  .form-styling-signup {
+    margin-top: 10vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    margin-bottom: 10vh;
+  }
 
-/* Recent posts */
+  /* Recent posts */
 
-.my-recent-posts-map {
-  margin: auto;
-  margin-top: 10vh;
-  height: 70vh;
-  width: 80vw;
-}
+  .my-recent-posts-map {
+    margin: auto;
+    height: 40vh;
+    width: contain;
+  }
 
-.recent-posts {
-  width: contain;
-  text-align: center;
-  margin: 10vh 8vw;
-}
-.recent-post {
-  width: 40vw;
-  float: left;
-  margin: 1vw;
-}
+  .recent-posts {
+    width: contain;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2vh 2vw;
+  }
+  .recent-post {
+    width: 100%;
+    margin: 1vw;
+  }
 
-.recent-post img {
-  width: 35vw;
-  height: 47vh;
-}
+  .recent-post-title {
+    font-size: 1.5em;
+  }
 
-.recent-post-title {
-  font-size: 1.5em;
-}
+  .image-map-recent {
+    margin-left: 2vw;
+    width: 70vw;
+    margin: 1vh auto;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid lightgrey;
+    position: relative;
+  }
+  .image-map-recent img:hover {
+    opacity: 0.4;
+  }
 
-.image-map-recent {
-  margin-left: 2vw;
-  width: 35vw;
-  margin-top: 3vh;
-  padding-bottom: 7vh;
-  border-bottom: 1px solid lightgrey;
-  position: relative;
-}
-.image-map-recent img:hover {
-  opacity: 0.4;
-}
+  .image-map-recent img:hover + .each-post-map {
+    display: block;
+  }
 
-.image-map-recent img:hover + .each-post-map {
-  display: block;
-}
-
-.each-post-map {
-  position: absolute;
-  top: 5vh;
-  left: 2.5vw;
-  display: none;
-  height: 36vh;
-  width: 30vw;
-}
-
-.lat-input-each {
-  display: none;
-}
-
-.lng-input-each {
-  display: none;
-}
-
-/* User Home Map */
-
-.my-user-home-map {
-  margin: auto;
-  height: 70vh;
-  width: 80vw;
-}
-
-.user-home-img {
-  float: left;
-  height: 40vh;
-  width: 40vw;
-  margin-left: 10vw;
-}
-
-.user-each-post-map {
-  height: 40vh;
-  width: 38vw;
-  float: left;
-  margin-left: 2vw;
-}
-
-.user-home-title {
-  margin-left: 5vw;
-}
-.user-home-ul li {
-  height: 60vh;
-  width: 100vw;
-  border-bottom: 1px solid lightgrey;
-}
-/* Single post map */
-
-.my-single-post-map {
-  height: 50vh;
-  width: 40vw;
-  float: left;
-  margin-left: 2vw;
-}
-.single-post-img {
-  float: left;
-  height: 50vh;
-  width: 40vw;
-  margin-left: 5vw;
-}
-.single-post-bottom {
-  clear: both;
-  margin-left: 5vw;
-  line-height: 6vw;
-}
-
-.lat-input {
-  display: none;
-}
-
-.lng-input {
-  display: none;
-}
-
-.delete-post-container {
-  position: relative;
-}
-
-.delete-post {
-  margin-bottom: 10vh;
-}
-
-.delete-post:hover + .notification {
-  display: inline;
-  position: absolute;
-  left: 10vw;
-  padding: 0 2vw;
-}
-.notification {
-  display: none;
-}
-
-/* single post form */
-
-.post-form-title {
-  width: 50vw;
-  margin: auto;
-  padding-top: 10vh;
-}
-
-.post-form-descr {
-  width: 50vw;
-  margin: auto;
-  padding-top: 3vh;
-}
-
-.post-form-file {
-  width: 50vw;
-  margin: auto;
-  padding-top: 3vh;
-}
-
-.post-form-btn {
-  margin-left: 25vw;
-  margin-top: 3vh;
-  margin-bottom: 10vh;
-}
-
-/* footer*/
-.foot {
-  padding: 5vh;
-  background-color: #eef7ff;
-  clear: both;
-}
-@media (min-width: 1088px) {
-  .hero-foot {
+  .each-post-map {
+    position: absolute;
+    top: 13%;
+    left: 10%;
     display: none;
+    height: 67%;
+    width: 80%;
+  }
+
+  .lat-input-each {
+    display: none;
+  }
+
+  .lng-input-each {
+    display: none;
+  }
+
+  /* User Home Map */
+
+  .my-user-home-map {
+    margin: auto;
+    height: 40vh;
+    width: contain;
+  }
+  .user-home-ul img {
+    height: 20vh;
+    width: 40vw;
+  }
+  .user-home-img {
+    float: left;
+    margin-left: 10vw;
+  }
+
+  .user-each-post-map {
+    height: 20vh;
+    width: 38vw;
+    float: left;
+    margin-left: 2vw;
+  }
+
+  .user-home-title {
+    margin-left: 5vw;
+  }
+  .user-home-ul li {
+    height: 25vh;
+
+    clear: both;
+  }
+  .bottom-div {
+    height: 15vh;
+  }
+  /* Single post map */
+
+  .my-single-post-map {
+    height: 40vh;
+    width: contain;
+  }
+  .single-post-img {
+    text-align: center;
+    width: contain;
+    height: auto;
+    margin-bottom: 2vh;
+  }
+  .single-post-bottom {
+    height: 46vh;
+    margin-left: 5vw;
+    line-height: 6vw;
+  }
+
+  .single-post-descr {
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+  }
+
+  .lat-input {
+    display: none;
+  }
+
+  .lng-input {
+    display: none;
+  }
+
+  .delete-post-container {
+    position: relative;
+    margin-bottom: 5vh;
+  }
+
+  .delete-post {
+    margin-bottom: 10vh;
+  }
+
+  .delete-post:hover + .notification {
+    display: inline;
+    position: absolute;
+    left: 28vw;
+    padding: 0 2vw;
+  }
+  .notification {
+    display: none;
+  }
+
+  /* single post form */
+
+  .form-styling-post {
+    margin-top: 10vh;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-bottom: 37vh;
+  }
+  .file-cta {
+    width: fit-content;
+  }
+  .file-name {
+    width: fit-content;
+  }
+
+  /* footer*/
+  .foot {
+    padding: 5vh;
+    background-color: #eef7ff;
+    clear: both;
+  }
+  .hero-body {
+    height: 80vh;
+  }
+  /* about us page */
+  .container-about-us {
+    text-align: center;
+    width: 80vw;
+  }
+
+  .img-rod img {
+    margin: 0 20vw;
+    margin-top: 5vh;
+    height: 30vh;
+    width: auto;
+    border-radius: 10%;
+    float: left;
+  }
+  .sidebar-box h3 {
+    padding: 2vh;
+    text-align: center;
+  }
+  .rodrigo .sidebar-box {
+    margin-left: 5vw;
+    max-height: 30vh;
+    position: relative;
+    overflow: hidden;
+    width: 80vw;
+    text-align: justify;
+    float: left;
+  }
+  .rodrigo .sidebar-box .read-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, white);
+  }
+  .sidebar-box1 h3 {
+    padding: 2vh;
+    text-align: center;
+  }
+
+  .img-leo img {
+    margin: 0 20vw;
+    margin-top: 5vh;
+    height: 30vh;
+    width: auto;
+    border-radius: 10%;
+    float: left;
+  }
+  .leo .sidebar-box1 {
+    margin-left: 5vw;
+    max-height: 35vh;
+    position: relative;
+    overflow: hidden;
+    width: 80vw;
+    text-align: justify;
+    float: left;
+  }
+  .leo .sidebar-box1 .read-more1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, white);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  /* Form styling */
+
+  .form-styling-contact {
+    margin-top: 10vh;
+    margin-right: 20vw;
+    margin-left: 10vw;
+    margin-bottom: 10vh;
+  }
+
+  .form-styling-login {
+    margin-top: 10vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    margin-bottom: 10vh;
+  }
+  .form-styling-signup {
+    margin-top: 10vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    margin-bottom: 10vh;
+  }
+
+  /* Recent posts */
+
+  .my-recent-posts-map {
+    margin: auto;
+    margin-top: 10vh;
+    height: 60vh;
+    width: 75vw;
+  }
+
+  .recent-posts {
+    width: contain;
+    text-align: center;
+    /* added */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10vh 8vw;
+  }
+  .recent-post {
+    width: 40vw;
+    height: 40vh;
+    /* float: left; */
+    justify-content: space-evenly;
+    margin: 1vw;
+  }
+
+  .recent-post img {
+    width: 40vw;
+    height: 30vh;
+  }
+
+  .recent-post-title {
+    font-size: 1.5em;
+  }
+
+  .image-map-recent {
+    margin-left: 2vw;
+    width: 35vw;
+    margin-top: 3vh;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid lightgrey;
+    position: relative;
+  }
+  .image-map-recent img:hover {
+    opacity: 0.4;
+  }
+
+  .image-map-recent img:hover + .each-post-map {
+    display: block;
+  }
+
+  .each-post-map {
+    position: absolute;
+    top: 4vh;
+    left: 5vw;
+    display: none;
+    width: 25vw;
+    height: 22vh;
+  }
+
+  .lat-input-each {
+    display: none;
+  }
+
+  .lng-input-each {
+    display: none;
+  }
+
+  /* User Home Map */
+
+  .my-user-home-map {
+    margin: auto;
+    height: 50vh;
+    width: 80vw;
+  }
+  .user-home-ul img {
+    height: 30vh;
+    width: 40vw;
+  }
+  .user-home-img {
+    float: left;
+    margin-left: 10vw;
+  }
+
+  .user-each-post-map {
+    height: 30vh;
+    width: 38vw;
+    float: left;
+    margin-left: 2vw;
+  }
+
+  .user-home-title {
+    margin-left: 5vw;
+  }
+  .user-home-ul li {
+    clear: both;
+    height: 40vh;
+    width: 100vw;
+  }
+
+  /* footer*/
+  .foot {
+    padding: 5vh;
+    background-color: #eef7ff;
+    clear: both;
+  }
+
+  /* about us page */
+  .container-about-us {
+    text-align: center;
+    width: 80vw;
+  }
+
+  .rodrigo img {
+    margin: 0 32vw;
+    margin-top: 5vh;
+    height: 30vh;
+    width: auto;
+    border-radius: 10%;
+    float: left;
+  }
+  .sidebar-box h3 {
+    padding: 2vh;
+    text-align: center;
+  }
+  .rodrigo .sidebar-box {
+    margin-left: 5vw;
+    max-height: 30vh;
+    position: relative;
+    overflow: hidden;
+    width: 80vw;
+    text-align: justify;
+    float: left;
+  }
+  .rodrigo .sidebar-box .read-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, white);
+  }
+  .sidebar-box1 h3 {
+    padding: 2vh;
+    text-align: center;
+  }
+  .leo img {
+    margin: 0 32vw;
+    margin-top: 5vh;
+    height: 30vh;
+    width: auto;
+    border-radius: 10%;
+    float: left;
+  }
+  .leo .sidebar-box1 {
+    margin-left: 5vw;
+    max-height: 35vh;
+    position: relative;
+    overflow: hidden;
+    width: 80vw;
+    text-align: justify;
+    float: left;
+  }
+  .leo .sidebar-box1 .read-more1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, white);
+  }
+  .bottom-div {
+    height: 10vh;
+  }
+  /* single post form */
+
+  .form-styling-post {
+    margin-top: 10vh;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-bottom: 39vh;
+  }
+  /* Single post map */
+
+  .my-single-post-map {
+    height: 40vh;
+    width: 30vw;
+    float: left;
+    margin-left: 2vw;
+  }
+  .single-post-img {
+    margin-left: 7vw;
+    text-align: center;
+    width: 55vw;
+    height: 40vh;
+    float: left;
+    margin-bottom: 2vh;
+  }
+  .single-post-bottom {
+    clear: both;
+    height: 46vh;
+    margin-left: 7vw;
+    line-height: 6vw;
+  }
+
+  .single-post-descr {
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+  }
+
+  .lat-input {
+    display: none;
+  }
+
+  .lng-input {
+    display: none;
+  }
+
+  .delete-post-container {
+    position: relative;
+    margin-bottom: 5vh;
+  }
+
+  .delete-post {
+    margin-bottom: 10vh;
+  }
+
+  .delete-post:hover + .notification {
+    display: inline;
+    position: absolute;
+    left: 28vw;
+    padding: 0 2vw;
+  }
+  .notification {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  /* Recent posts */
+
+  .my-recent-posts-map {
+    margin: auto;
+    margin-top: 10vh;
+    height: 50vh;
+    width: 75vw;
+  }
+
+  .recent-posts {
+    width: contain;
+    text-align: center;
+    /* added */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10vh 8vw;
+  }
+  .recent-post {
+    width: 40vw;
+    height: 40vh;
+    /* float: left; */
+    justify-content: space-evenly;
+    margin: 1vw;
+  }
+
+  .recent-post img {
+    width: 40vw;
+    height: 30vh;
+  }
+
+  .recent-post-title {
+    font-size: 1.5em;
+  }
+
+  .image-map-recent {
+    margin-left: 2vw;
+    width: 35vw;
+    margin-top: 3vh;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid lightgrey;
+    position: relative;
+  }
+  .image-map-recent img:hover {
+    opacity: 0.4;
+  }
+
+  .image-map-recent img:hover + .each-post-map {
+    display: block;
+  }
+  .each-post-map:hover + .hover-map {
+    display: none;
+  }
+
+  .each-post-map {
+    position: absolute;
+    top: 4vh;
+    left: 5vw;
+    display: none;
+    width: 25vw;
+    height: 22vh;
+  }
+
+  .lat-input-each {
+    display: none;
+  }
+
+  .lng-input-each {
+    display: none;
+  }
+
+  /* User Home Map */
+
+  .my-user-home-map {
+    margin: auto;
+    height: 60vh;
+    width: 80vw;
+  }
+  .user-home-ul img {
+    height: 40vh;
+    width: 40vw;
+  }
+  .user-home-img {
+    float: left;
+    margin-left: 10vw;
+  }
+
+  .user-each-post-map {
+    height: 40vh;
+    width: 38vw;
+    float: left;
+    margin-left: 2vw;
+  }
+
+  .user-home-title {
+    margin-left: 5vw;
+  }
+  .user-home-ul li {
+    clear: both;
+    height: 50vh;
+    width: 100vw;
+  }
+
+  /* about us page */
+  .container-about-us {
+    width: 100%;
+  }
+
+  .rodrigo img {
+    margin: 0px 5vw;
+    margin-top: 5vh;
+    height: 30vh;
+    border-radius: 10%;
+    float: left;
+  }
+
+  .sidebar-box h3 {
+    padding: 2vh 0vw;
+    margin-left: 0vw;
+    text-align: left;
+  }
+  .rodrigo .sidebar-box {
+    max-height: 40vh;
+    min-height: 32vh;
+    margin-left: 0vw;
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    text-align: justify;
+    float: left;
+  }
+  .rodrigo .sidebar-box .read-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, white);
+  }
+  .sidebar-box1 h3 {
+    padding: 2vh 0vw;
+    margin-left: 0vw;
+    text-align: left;
+  }
+  .leo img {
+    margin: 2vh 5vw;
+    height: 30vh;
+    border-radius: 10%;
+    float: left;
+  }
+  .leo .sidebar-box1 {
+    max-height: 40vh;
+    margin-left: 0vw;
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    text-align: justify;
+    float: left;
+  }
+  .leo .sidebar-box1 .read-more1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, white);
+  }
+
+  /* Single post map */
+
+  .my-single-post-map {
+    height: 50vh;
+    width: 30vw;
+    float: left;
+    margin-left: 2vw;
+  }
+  .single-post-img {
+    margin-left: 7vw;
+    text-align: center;
+    width: 55vw;
+    height: 50vh;
+    float: left;
+    margin-bottom: 2vh;
+  }
+  .single-post-bottom {
+    clear: both;
+    height: 46vh;
+    margin-left: 7vw;
+    line-height: 6vw;
+  }
+
+  .single-post-descr {
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+  }
+
+  .lat-input {
+    display: none;
+  }
+
+  .lng-input {
+    display: none;
+  }
+
+  .delete-post-container {
+    position: relative;
+    margin-bottom: 5vh;
+  }
+
+  .delete-post {
+    margin-bottom: 10vh;
+  }
+
+  .delete-post:hover + .notification {
+    display: inline;
+    position: absolute;
+    left: 28vw;
+    padding: 0 2vw;
+  }
+  .notification {
+    display: none;
+  }
+
+  .bottom-div {
+    height: 10vh;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  /* Recent posts */
+
+  .my-recent-posts-map {
+    margin: auto;
+    margin-top: 10vh;
+    height: 60vh;
+    width: 75vw;
+  }
+
+  .recent-posts {
+    width: contain;
+    text-align: center;
+    /* added */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10vh 8vw;
+  }
+  .recent-post {
+    width: 40vw;
+    height: 40vh;
+    /* float: left; */
+    justify-content: space-evenly;
+    margin: 1vw;
+  }
+
+  .recent-post img {
+    width: 40vw;
+    height: 30vh;
+  }
+
+  .recent-post-title {
+    font-size: 1.5em;
+  }
+
+  .image-map-recent {
+    margin-left: 2vw;
+    width: 35vw;
+    margin-top: 3vh;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid lightgrey;
+    position: relative;
+  }
+  .image-map-recent img:hover {
+    opacity: 0.4;
+  }
+
+  .image-map-recent img:hover + .each-post-map {
+    display: block;
+  }
+
+  .each-post-map {
+    position: absolute;
+    top: 4vh;
+    left: 5vw;
+    display: none;
+    width: 25vw;
+    height: 22vh;
+  }
+
+  .lat-input-each {
+    display: none;
+  }
+
+  .lng-input-each {
+    display: none;
+  }
+  /* User Home Map */
+
+  .my-user-home-map {
+    margin: auto;
+    height: 60vh;
+    width: 80vw;
+  }
+  .user-home-ul img {
+    height: 50vh;
+    width: 40vw;
+  }
+  .user-home-img {
+    float: left;
+    margin-left: 10vw;
+  }
+
+  .user-each-post-map {
+    height: 50vh;
+    width: 38vw;
+    float: left;
+    margin-left: 2vw;
+  }
+
+  .user-home-title {
+    margin-left: 5vw;
+  }
+  .user-home-ul li {
+    clear: both;
+    height: 50vh;
+    width: 100vw;
+  }
+
+  /* Single post map */
+
+  .my-single-post-map {
+    height: 60vh;
+    width: 30vw;
+    float: left;
+    margin-left: 2vw;
+  }
+  .single-post-img {
+    margin-left: 7vw;
+    text-align: center;
+    width: 55vw;
+    height: 60vh;
+    float: left;
+    margin-bottom: 2vh;
+  }
+  .single-post-bottom {
+    clear: both;
+    height: 50vh;
+    margin-left: 7vw;
+    line-height: 6vw;
+  }
+
+  .single-post-descr {
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+  }
+
+  .lat-input {
+    display: none;
+  }
+
+  .lng-input {
+    display: none;
+  }
+
+  .delete-post-container {
+    position: relative;
+    margin-bottom: 5vh;
+  }
+
+  .delete-post {
+    margin-bottom: 10vh;
+  }
+
+  .delete-post:hover + .notification {
+    display: inline;
+    position: absolute;
+    left: 28vw;
+    padding: 0 2vw;
+  }
+  .notification {
+    display: none;
+  }
+  .bottom-div {
+    height: 20vh;
+  }
+  /* about us page */
+  .container-about-us {
+    width: 100%;
+  }
+
+  .rodrigo img {
+    margin: 0px 5vw;
+    margin-top: 5vh;
+    height: 30vh;
+    border-radius: 10%;
+    float: left;
+  }
+
+  .sidebar-box h3 {
+    padding: 2vh 0vw;
+    margin-left: 0vw;
+    text-align: left;
+  }
+  .rodrigo .sidebar-box {
+    max-height: 40vh;
+    min-height: 32vh;
+    margin-left: 0vw;
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    text-align: justify;
+    float: left;
+  }
+  .rodrigo .sidebar-box .read-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, white);
+  }
+  .sidebar-box1 h3 {
+    padding: 2vh 0vw;
+    margin-left: 0vw;
+    text-align: left;
+  }
+  .leo img {
+    margin: 2vh 5vw;
+    height: 30vh;
+    border-radius: 10%;
+    float: left;
+  }
+  .leo .sidebar-box1 {
+    max-height: 40vh;
+    margin-left: 0vw;
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    text-align: justify;
+    float: left;
+  }
+  .leo .sidebar-box1 .read-more1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, white);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* Recent posts */
+
+  .my-recent-posts-map {
+    margin: auto;
+    margin-top: 10vh;
+    height: 60vh;
+    width: 75vw;
+  }
+
+  .recent-posts {
+    width: contain;
+    text-align: center;
+    /* added */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10vh 8vw;
+  }
+  .recent-post {
+    width: 40vw;
+    height: 70vh;
+    /* float: left; */
+    justify-content: space-evenly;
+    margin: 1vw;
+  }
+
+  .recent-post img {
+    width: 40vw;
+    height: 50vh;
+    margin: 4vh auto;
+  }
+
+  .recent-post-title {
+    font-size: 1.5em;
+  }
+
+  .image-map-recent {
+    margin: auto;
+    width: 40vw;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid lightgrey;
+    position: relative;
+  }
+  .image-map-recent img:hover {
+    opacity: 0.4;
+  }
+
+  .image-map-recent img:hover + .each-post-map {
+    display: block;
+  }
+
+  .each-post-map {
+    position: absolute;
+    top: 9vh;
+    left: 5vw;
+    display: none;
+    width: 30vw;
+    height: 40vh;
+  }
+
+  .lat-input-each {
+    display: none;
+  }
+
+  .lng-input-each {
+    display: none;
+  }
+
+  /* User Home Map */
+
+  .my-user-home-map {
+    margin: auto;
+    height: 60vh;
+    width: 80vw;
+  }
+  .user-home-ul img {
+    height: 50vh;
+    width: 40vw;
+  }
+  .user-home-img {
+    float: left;
+    margin-left: 10vw;
+  }
+
+  .user-each-post-map {
+    height: 50vh;
+    width: 38vw;
+    float: left;
+    margin-left: 2vw;
+  }
+
+  .user-home-title {
+    margin-left: 5vw;
+  }
+  .user-home-ul li {
+    clear: both;
+    height: 60vh;
+    width: 100vw;
+  }
+  /* Single post map */
+
+  .my-single-post-map {
+    height: 70vh;
+    width: 30vw;
+    float: left;
+    margin-left: 2vw;
+  }
+  .single-post-img {
+    margin-left: 7vw;
+    text-align: center;
+    width: 55vw;
+    height: 70vh;
+    float: left;
+    margin-bottom: 2vh;
+  }
+  .single-post-bottom {
+    clear: both;
+    height: 60vh;
+    margin-left: 7vw;
+    line-height: 6vw;
+  }
+
+  .single-post-descr {
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+  }
+
+  .lat-input {
+    display: none;
+  }
+
+  .lng-input {
+    display: none;
+  }
+
+  .delete-post-container {
+    position: relative;
+    margin-bottom: 5vh;
+  }
+
+  .delete-post {
+    margin-bottom: 10vh;
+  }
+
+  .delete-post:hover + .notification {
+    display: inline;
+    position: absolute;
+    left: 28vw;
+    padding: 0 2vw;
+  }
+  .notification {
+    display: none;
+  }
+
+  .bottom-div {
+    height: 20vh;
   }
 }

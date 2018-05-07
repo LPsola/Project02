@@ -26,7 +26,7 @@ axios
     userPostList.forEach(oneUserPost => {
       const [latitude, longitude] = oneUserPost.coordinates;
       console.log(latitude, longitude);
-      new google.maps.Marker({
+      const newMarker = new google.maps.Marker({
         position: {
           lat: latitude,
           lng: longitude
@@ -35,9 +35,28 @@ axios
         title: oneUserPost.title,
         animation: google.maps.Animation.DROP
       });
+      contentString =
+        '<a href="/user/home/post/' +
+        oneUserPost._id +
+        '">' +
+        oneUserPost.title +
+        "<br>" +
+        "view full post..." +
+        "<br>" +
+        "<img style ='height: 15vh 'src=" +
+        oneUserPost.pictureUrl +
+        "></a>";
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      newMarker.addListener("click", function() {
+        infowindow.open(map1, newMarker);
+      });
     });
   })
   .catch(err => {
+    console.log(err);
     alert("Something went wrong! 💩");
   });
 

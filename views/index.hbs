@@ -9,40 +9,4 @@
     </div>
   </div>
 
-  <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot">
-    <nav class="tabs">
-      <div class="container">
-        <ul>
-          {{#if foundUser}}
-          <a href="/user/home">
-            <strong>{{foundUser.username}}</strong>
-          </a>
-          {{/if}}
-          <li class="is-active">
-            <a id="home" href="/">Home</a>
-          </li>
-          <li>
-            <a id="contact" href="/contact">Contact Us</a>
-          </li>
-          <li>
-            <a href="/about">About Us</a>
-          </li>
-          <li>
-            <a href="/now">Recent Posts</a>
-          </li>
-          {{#if foundUser}}
-          <a href="/auth/logout">Log Out</a>
-          {{else}}
-          <li>
-            <a href="/auth/login">Log In</a>
-          </li>
-          <li>
-            <a href="/auth/signup">Sign Up</a>
-          </li>
-          {{/if}}
-        </ul>
-      </div>
-    </nav>
-  </div>
 </section>

@@ -1,48 +1,226 @@
-h1 {
-  text-align: center;
-  padding-top: 10vh;
-  padding-bottom: 2vh;
-  font: 8vh "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: hsl(217, 71%, 53%);
+@media only screen and (max-width: 600px) {
+  h1 {
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    font: 5vw "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: hsl(217, 71%, 53%);
+  }
+
+  h2 {
+    padding-bottom: 5vh;
+    text-align: center;
+    color: lightgrey;
+    font: 3vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h3 {
+    margin-left: 5vw;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 4vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h4 {
+    color: lightgrey;
+    font: 1.4vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h5 {
+    margin-left: 5vw;
+    color: lightgrey;
+    font: 2vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h6 {
+    margin-left: 5vw;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 3vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h7 {
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 66%, 74%);
+    font: 5vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  .politicians {
+    color: black;
+    font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .p-foot {
+    font-size: 3vw;
+  }
 }
 
-h2 {
-  padding-bottom: 5vh;
-  text-align: center;
-  color: lightgrey;
-  font: 3vh "Lucida Grande", Helvetica, Arial, sans-serif;
+@media only screen and (min-width: 600px) {
+  h1 {
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    font: 4vw "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: hsl(217, 71%, 53%);
+  }
+  h2 {
+    padding-bottom: 5vh;
+    text-align: center;
+    color: lightgrey;
+    font: 2.5vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h5 {
+    margin-left: 5vw;
+    color: lightgrey;
+    font: 1.8vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h6 {
+    margin-left: 5vw;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 2.5vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h4 {
+    color: lightgrey;
+    font: 1.2vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h3 {
+    margin-left: 7vw;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 3vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+}
+@media only screen and (min-width: 769px) {
+  h1 {
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    font: 4vw "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: hsl(217, 71%, 53%);
+  }
+  h2 {
+    padding-bottom: 5vh;
+    text-align: center;
+    color: lightgrey;
+    font: 2vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h5 {
+    margin-left: 5vw;
+    color: lightgrey;
+    font: 1.4vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h6 {
+    margin-left: 5vw;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 2vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h4 {
+    color: lightgrey;
+    font: 1.2vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h3 {
+    margin-left: 7vw;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 3vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h1 {
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    font: 3.6vw "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: hsl(217, 71%, 53%);
+  }
+  h2 {
+    padding-bottom: 5vh;
+    text-align: center;
+    color: lightgrey;
+    font: 1.5vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h5 {
+    margin-left: 5vw;
+    color: lightgrey;
+    font: 1vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  h6 {
+    margin-left: 5vw;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 1.5vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h4 {
+    color: lightgrey;
+    font: 1.2vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h3 {
+    margin-left: 7vw;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 3vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
 }
 
-h3 {
-  margin-left: 5vw;
-  padding-bottom: 5vh;
-  padding-top: 5vh;
-  text-align: left;
-  color: hsl(217, 71%, 53%);
-  font: 4vh "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+@media only screen and (min-width: 1200px) {
+  h1 {
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    font: 3vw "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: hsl(217, 71%, 53%);
+  }
+  h2 {
+    padding-bottom: 5vh;
+    text-align: center;
+    color: lightgrey;
+    font: 1.4vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h5 {
+    margin-left: 5vw;
+    color: lightgrey;
+    font: 1vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
 
-h4 {
-  color: lightgrey;
-  font: 2vh "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  h6 {
+    margin-left: 5vw;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 1.6vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
 
-h5 {
-  margin-left: 5vw;
-  color: lightgrey;
-  font: 2vh "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-h6 {
-  margin-left: 5vw;
-  padding-top: 5vh;
-  text-align: left;
-  color: hsl(217, 71%, 53%);
-  font: 4vh "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-.politicians{
-  color: black;
-  font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin-bottom: 10px;
+  h4 {
+    color: lightgrey;
+    font: 1vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  h3 {
+    margin-left: 7vw;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    text-align: left;
+    color: hsl(217, 71%, 53%);
+    font: 3vw "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
 }

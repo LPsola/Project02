@@ -9,6 +9,7 @@ const map2 = new google.maps.Map(homeMap, {
     lng: 2.350148
   }
 });
+
 axios
   .get("/recentposts/data")
   .then(response => {
@@ -18,7 +19,7 @@ axios
       if (latitude === undefined || longitude === undefined) {
         return;
       } else {
-        new google.maps.Marker({
+        const newMarker = new google.maps.Marker({
           position: {
             lat: latitude,
             lng: longitude
@@ -26,6 +27,24 @@ axios
           map: map2,
           title: onePost.title,
           animation: google.maps.Animation.DROP
+        });
+        contentString =
+          '<a href="/user/home/post/' +
+          onePost._id +
+          '">' +
+          onePost.title +
+          "<br>" +
+          "view full post..." +
+          "<br>" +
+          "<img style ='height: 15vh 'src=" +
+          onePost.pictureUrl +
+          "></a>";
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        newMarker.addListener("click", function() {
+          infowindow.open(map2, newMarker);
         });
       }
     });

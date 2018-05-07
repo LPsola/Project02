@@ -6,7 +6,8 @@
 <div class="my-single-post-map"></div>
 
 <div class="single-post-bottom">
-  <p class="single-post-descr">{{post.description}}</p>
+  <p class="single-post-descr">{{post.description}}
+  </p>
   <div class="delete-post-container">
     <a class="delete-post" href="{{post._id}}/delete">
       <button class="button is-danger">
@@ -19,7 +20,11 @@
 
   </div>
   <p>
-    <a href="{{post._id}}/retweet">Tweet Your Officials</a>
+    <a href="{{post._id}}/retweet">
+      <button class="button is-link">
+        Tweet Your Officials
+      </button>
+    </a>
   </p>
 </div>
 
